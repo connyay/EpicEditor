@@ -1299,6 +1299,9 @@
     for (var x = 0; x < elements.length; x++) {
       if (!kind || kind == 'width') {
         newWidth = self.element.offsetWidth - widthDiff + 'px';
+        if (self.settings.fullwidth === true) {
+          newWidth = '100%'
+        }
         elements[x].style.width = newWidth;
         self._eeState.reflowWidth = newWidth;
         eventData.width = newWidth;
